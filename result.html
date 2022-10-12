@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="../static/jumbotron-narrow.css" rel="stylesheet">
+
+    <link href="../static/style.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active btn" style="padding: 0px;"><a href="/">Home</a>
+                </li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Result</h3>
+    </div>
+
+    <div class="jumbotron">
+        <!-- <div id="image-container"> -->
+           <img src=" {{url_for('send_image', filename=image)}} " style="max-width: 560px;">
+           {% if gettext %}
+            <h1>Text in image</h1>
+            <div id="heading">
+                {{message}}
+            </div>
+            <br><br>
+            <a type="button" class="btn btn-lg btn-primary" href="{{txt_file}}" download>Download as Text File</a>
+           {% endif %}
+
+           {% if search %}
+            <h1>Search Complete</h1>
+            <div id="heading">
+                {{message}}
+            </div>
+           {% endif %}
+
+           {% if evaluate %}
+            <h1>Result</h1>
+            <div id="heading">
+                {{message}}
+            </div>
+           {% endif %}
+
+           {% if detectface %}
+            <h1>Result</h1>
+            <div id="heading">
+                {{message}}
+            </div>
+           {% endif %}
+    </div>
+  </div> 
+</body>
+</html>
